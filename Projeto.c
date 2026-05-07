@@ -3,6 +3,7 @@
 #include <cstring>  // Para strcmp, strtok, strcspn
 #include <cstdlib>  // Para system(), exit(), atoi()
 #include <filesystem> // Para validar se ficheiros existem
+#include <stdbool.h>
 
 using namespace std;
 namespace fs = std::filesystem;
@@ -45,7 +46,7 @@ int main() {
 
         // [EXIT]
         if (strcmp(palavras[0], "exit") == 0 || strcmp(palavras[0], "Exit") == 0) {
-            cout << "A encerrar... Ate a proxima!" << endl;
+            printf_s("A encerrar... Ate a proxima!");
             exit(0);
         }
 
@@ -85,6 +86,7 @@ int main() {
             }
         }
 
+        
         // [CP] - Copiar
         else if (strcmp(palavras[0], "cp") == 0) {
             if (palavras[1] == NULL || palavras[2] == NULL) {
